@@ -1,0 +1,13 @@
+<%= form_for @order do |ppl| %>
+    <div class="form-group">
+    <label>Board</label>
+    <%= ppl.text_field :board %>
+    </div>
+    <div class="form-group">
+    <label>Waiter</label>
+    <%= ppl.text_field :waiter%>
+    </div>
+
+    <%= ppl.submit :Submit%>
+    
+<% end%>

@@ -1,0 +1,33 @@
+<h1>Orders</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Board</th>
+      <th>Waiter</th>
+      <th>Detalle</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |orr| %>
+      <tr>
+        <td><%= orr.id %></td>
+        <td><%= orr.board%></td>
+        <td><%= orr.waiter %></td>
+        <td><%= link_to "Ver", order_path(orr.id)%></td>
+         <td><%= link_to "Editar", edit_order_path(orr.id)%></td>
+         <td><%= link_to 'Delete', 
+         order_path(orr), 
+                     method: :delete, 
+                     data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+<div> 
+<%= button_tag(type: 'button', class: 'btn btn-dark') do %>
+  <% link_to 'Añadir', new_order_path %>
+<% end %>
+</div>
